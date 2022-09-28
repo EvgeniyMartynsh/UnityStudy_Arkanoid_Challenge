@@ -9,6 +9,8 @@ public class GameOverScene : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI bestScoreText;
     [SerializeField] TextMeshProUGUI playerScoreText;
+    [SerializeField] TextMeshProUGUI gameStatusText;
+
     [SerializeField] public static int playerScore;
 
 
@@ -36,6 +38,7 @@ public class GameOverScene : MonoBehaviour
         {
             bestScoreText.text = "New High Score!!! You score: " + currentScore;
             playerScoreText.text = "Previous best High Score: " + MainManager.lastBestScore;
+            gameStatusText.text = "YOU WIN!!!";
         }
 
         else
@@ -44,6 +47,7 @@ public class GameOverScene : MonoBehaviour
             " " + SaveManager.Instance.HighScore;
 
             playerScoreText.text = "You score: " + currentScore;
+            gameStatusText.text = "GAME OVER";
         }
 
     }
